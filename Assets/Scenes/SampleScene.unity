@@ -229,7 +229,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 6.14
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 872745940}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -683,8 +683,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1318328008}
   - component: {fileID: 1318328007}
-  - component: {fileID: 1318328006}
   - component: {fileID: 1318328005}
+  - component: {fileID: 1318328009}
   m_Layer: 0
   m_Name: "Bot\xE3oParaPropor\xE7\xE3o"
   m_TagString: Untagged
@@ -727,19 +727,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &1318328006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1318328004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a25d2afb70d4d7a43a23dd75b548e990, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GravityCanChange: 0
 --- !u!212 &1318328007
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -807,6 +794,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1318328009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318328004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde7667d44ae3754a9a487ed63e74f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proportionCanChange: 0
 --- !u!1 &1848203874
 GameObject:
   m_ObjectHideFlags: 0
