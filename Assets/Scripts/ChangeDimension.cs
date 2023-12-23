@@ -13,7 +13,7 @@ public class ChangeDimension : MonoBehaviour
 
        if (!GravityCanChange)
         {
-            Debug.Log("Being called gravity");
+          //  Debug.Log("Being called gravity");
             Physics2D.gravity = new Vector2(0, -9.81f);
 
         }
