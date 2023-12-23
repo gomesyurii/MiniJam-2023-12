@@ -34,13 +34,10 @@ public class Treadmill : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        Debug.Log("Trigger");
         if (collision.collider.CompareTag("Player") || collision.collider.CompareTag("Interactable"))
         {
-            Debug.Log("Player");
             Vector3 direction = isLeft ? Vector3.left : Vector3.right;
             Rigidbody2D rb = collision.collider.GetComponent<Rigidbody2D>();
-            Debug.Log(rb is null);
             rb.AddForce(direction * speed, ForceMode2D.Force);
         }
     }
