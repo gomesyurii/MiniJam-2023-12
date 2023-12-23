@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class WindZone : MonoBehaviour
 {
-    [SerializeField] private float windForce = 1000f;
-    [SerializeField] private bool canWind = true;
+    [SerializeField] private float windForce = 100f;
+    [SerializeField] private bool canWind = false;
 
 
     public void SetCanWind()
@@ -21,9 +21,7 @@ public class WindZone : MonoBehaviour
             var hitobj = other.gameObject;
             if (hitobj != null && other.CompareTag("Player"))
             {
-                Debug.Log("Wind");
                 var rb = hitobj.GetComponent<Rigidbody2D>();
-                Debug.Log(rb.name);
                 rb.AddForce(transform.right * windForce);
             }
         }

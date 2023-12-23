@@ -9,7 +9,7 @@ public class Smash : MonoBehaviour
     private float timer = 0f;
     private bool isMovingUp = false;
 
-    void Update()
+    void FixedUpdate()
     {
         if (canSmash)
         {
@@ -35,8 +35,5 @@ public class Smash : MonoBehaviour
             }
         }
     }
-
-
-
-
+  
 }
