@@ -21,13 +21,31 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        isGrounded = Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Ground")); 
+    }
+    
+
+    public void FixedUpdate()
+    {
+
+        float x = Input.GetAxisRaw("Horizontal");
+
+        if (x != 0)
+        {
+            direction = x > 0 ? 1 : -1;
+        }
+
+
+        float moveBy = x * speed;
+        rb.velocity = new Vector2(moveBy, rb.velocity.y);
+
         if (direction == 1)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0); // Rotaciona o personagem para a direita
+            transform.localScale = new Vector3(5,5,5); // Virar para a direita
         }
         else if (direction == -1)
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0); // Rotaciona o personagem para a esquerda
+            transform.localScale = new Vector3(-5,5,5); // Virar para a esquerda
         }
 
         if (Physics2D.gravity.y < 0)
@@ -39,21 +57,9 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(180, 0, 0);
         }
-    }
 
 
-    public void FixedUpdate()
-    {
-        float x = Input.GetAxisRaw("Horizontal");
 
-        if (x != 0)
-        {
-            direction = x > 0 ? 1 : -1;
-        }
-
-
-        float moveBy = x * speed;
-        rb.velocity = new Vector2(moveBy, rb.velocity.y);
 
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -73,12 +79,12 @@ public class PlayerMovement : MonoBehaviour
         {
             isWalking = false;
 
-        }
+        } 
 
-        if (rb.velocity.y == 0)
-        {
-            isGrounded = true;
-        }
+     //   if (rb.velocity.y == 0)
+       // {
+      //      isGrounded = true;
+      //  }
 
     }
 
