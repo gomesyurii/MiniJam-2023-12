@@ -14,8 +14,14 @@ public class WindZone : MonoBehaviour
         this.canWind = !this.canWind;
     }
 
+    private void OnMouseDown()
+    {
+        SetCanWind();
+    }
+ 
     private void OnTriggerStay2D(Collider2D other)
     {
+        Debug.Log("Wind");
         if (canWind)
         {
             var hitobj = other.gameObject;
@@ -25,10 +31,5 @@ public class WindZone : MonoBehaviour
                 rb.AddForce(transform.right * windForce);
             }
         }
-
-
     }
-
-
-
 }
