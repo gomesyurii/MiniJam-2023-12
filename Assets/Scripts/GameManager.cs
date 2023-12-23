@@ -4,13 +4,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour 
 {
     public static GameManager Instance;
+    public float level = 1;
     
     private void Awake()
     {
         Instance = this;
     }
     
-    public void RestartLevel()
+    public void RestartLevel() 
     {
         StartCoroutine(RestartLevelCoroutine());
     }

@@ -6,20 +6,27 @@ using UnityEngine.SceneManagement;
 public class Unfreeze : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    [SerializeField] private GameManager gameManager;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+         if (other.CompareTag("Player"))
         {
-           Debug.Log("unfreeze");
-            //Animação aqui
-           SceneManager.LoadScene("Level2");
-           //Trocar o valor do level 
+            Debug.Log("unfreeze");
+
+            // Animation here (if needed)
+
+            // Load the next level scene
+            SceneManager.LoadScene("Level" + (gameManager.level + 1));
+ 
+            // Increment the level value
+            gameManager.level++;
         }
     }
 }
