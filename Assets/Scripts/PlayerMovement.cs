@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public bool isGrounded = false;
+    public bool isGrounded = true;
     public bool isWalking = false;
     public int direction;
     private float speed = 5f;
@@ -16,14 +16,42 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-
-
-
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Ground")); 
+        isGrounded = IsGrounded();
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            Pular();
+        }
     }
-    
+
+
+    void Pular()
+    {
+        // Adiciona uma força vertical para simular o pulo
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    bool IsGrounded()
+    {
+
+        float distance = 0.5f;
+
+        // The layer mask to hit only the ground layer
+        int layerMask = LayerMask.GetMask("Ground");
+
+        // Move the start point of the raycast up a bit
+        Vector3 startPoint = transform.position + new Vector3(0, 0.1f, 0);
+
+        // Perform the raycast
+        RaycastHit2D hit = Physics2D.Raycast(startPoint, Vector2.down, distance, layerMask);
+        Debug.DrawRay(startPoint, Vector2.down * distance, Color.red);
+
+        // If the raycast hit something, the player is grounded
+        return hit.collider != null;
+    }
 
     public void FixedUpdate()
     {
@@ -41,11 +69,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (direction == 1)
         {
-            transform.localScale = new Vector3(5,5,5); // Virar para a direita
+            transform.localScale = new Vector3(5, 5, 5); // Virar para a direita
         }
         else if (direction == -1)
         {
-            transform.localScale = new Vector3(-5,5,5); // Virar para a esquerda
+            transform.localScale = new Vector3(-5, 5, 5); // Virar para a esquerda
         }
 
         if (Physics2D.gravity.y < 0)
@@ -58,17 +86,6 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(180, 0, 0);
         }
 
-
-
-
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            isGrounded = false;
-        }
-
         if (rb.velocity.x != 0)
         {
             isWalking = true;
@@ -79,13 +96,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isWalking = false;
 
-        } 
-
-     //   if (rb.velocity.y == 0)
-       // {
-      //      isGrounded = true;
-      //  }
-
+        }
     }
 
 
