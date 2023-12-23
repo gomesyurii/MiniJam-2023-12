@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    public Rigidbody2D rb; 
     public bool isGrounded = true;
     public bool isWalking = false;
     public int direction;
