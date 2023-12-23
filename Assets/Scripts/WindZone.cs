@@ -8,6 +8,12 @@ public class WindZone : MonoBehaviour
     [SerializeField] private float windForce = 1000f;
     [SerializeField] private bool canWind = true;
 
+
+    public void SetCanWind()
+    {
+        this.canWind = !this.canWind;
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (canWind)
