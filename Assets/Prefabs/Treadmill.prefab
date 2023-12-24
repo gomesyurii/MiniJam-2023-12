@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 7454491995883135428}
   - component: {fileID: 8498055329499003859}
   - component: {fileID: 880023058568051126}
+  - component: {fileID: 3368210549126248373}
   m_Layer: 0
   m_Name: Treadmill
   m_TagString: Untagged
@@ -330,6 +331,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!111 &3368210549126248373
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5142413514249454097}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &7252673705403354637
 GameObject:
   m_ObjectHideFlags: 0
