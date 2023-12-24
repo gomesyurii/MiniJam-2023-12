@@ -1450,6 +1450,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 144749340988361710, guid: 6598d11fb59114d4f8faba3576afe637, type: 3}
   m_PrefabInstance: {fileID: 498238755}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &517231938
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 12115932487715412, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 12115932487715412, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.1462555
+      objectReference: {fileID: 0}
+    - target: {fileID: 12115932487715412, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.172395
+      objectReference: {fileID: 0}
+    - target: {fileID: 12115932487715412, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12115932487715412, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 12115932487715412, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12115932487715412, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12115932487715412, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12115932487715412, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12115932487715412, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 12115932487715412, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882223743209491574, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 45a9651d45372064a9ec2503b9bdae3f, type: 3}
+    - target: {fileID: 8791695877398238370, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+      propertyPath: m_Name
+      value: Trampoline
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 383379928697672371, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+    - {fileID: 5709582929524647877, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b4baa9d7c8012746b2fc4eaf9264460, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -7331,3 +7398,4 @@ SceneRoots:
   - {fileID: 1420748275}
   - {fileID: 697156617}
   - {fileID: 1090258904}
+  - {fileID: 517231938}
