@@ -12,6 +12,7 @@ public class WindZone : MonoBehaviour
     void Start()
     {
         buttonSprite.color = Color.red;
+        canWind = false;
     }
 
     public void SetCanWind()
