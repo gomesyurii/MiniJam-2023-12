@@ -8,11 +8,20 @@ public class WindZone : MonoBehaviour
     [SerializeField] private float windForce = 100f;
     [SerializeField] private bool canWind = false;
     [SerializeField] private SpriteRenderer buttonSprite;
+    [SerializeField] private bool startWithWind = false;
 
     void Start()
     {
-        buttonSprite.color = Color.red;
-        canWind = false;
+        if (startWithWind)
+        {
+            buttonSprite.color = Color.green;
+            canWind = true;
+        }
+        else
+        {
+            buttonSprite.color = Color.red;
+            canWind = false;
+        }
     }
 
     public void SetCanWind()
@@ -35,7 +44,6 @@ public class WindZone : MonoBehaviour
  
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("Wind");
         if (canWind)
         {
             var hitobj = other.gameObject;

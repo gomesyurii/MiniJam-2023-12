@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour 
@@ -10,15 +11,29 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
     }
-    
-    public void RestartLevel() 
+
+    private void Update()
     {
-        StartCoroutine(RestartLevelCoroutine());
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartLevel(0f);
+        }
     }
     
-    private IEnumerator RestartLevelCoroutine()
+    public void CallLevel1()
     {
-        yield return new WaitForSeconds(2f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
+    }
+
+    public void RestartLevel(float delay = 1f) 
+    {
+        StartCoroutine(RestartLevelCoroutine(delay));
+    }
+
+    private IEnumerator RestartLevelCoroutine(float delay = 1f)
+    {
+        yield return new WaitForSeconds(delay);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene()
+            .buildIndex);
     }
 }

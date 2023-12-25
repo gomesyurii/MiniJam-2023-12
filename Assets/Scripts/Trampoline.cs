@@ -10,10 +10,8 @@ public class Trampolin : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         var hitobj = other.gameObject;
-        Debug.Log(hitobj == null);
         if (hitobj != null && other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Jump");
             var rb = hitobj.GetComponent<Rigidbody2D>();
             rb.AddForce(transform.up * jumpForce);
         }
